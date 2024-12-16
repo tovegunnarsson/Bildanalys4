@@ -111,22 +111,52 @@
 % Are the two classes possible to separate by using either the x or y coordinate as a single feature? 
 % Explain why or why not.
 
+\begin{figure}[b]
+  \centering
+  \includegraphics[width = 15cm]{images/Q1.png}
+  \caption{Plot of the given data of two classes}
+  \label{fig:Q1}
+\end{figure}
 
+As illustrated in Figure \ref{fig:Q1}, the dataset comprises two distinct classes that can be separated by a straight line. However, since the separating line is neither horizontal nor vertical, it is evident that a single feature alone is insufficient to achieve this separation. Consequently, both coordinates are required to effectively distinguish between the two classes.
 
 \textbf{\emph{Question 2.}}
 % Does multiple thresholding give a successful classification of the three classes?
 % Explain why or why not
+Multiple thresholds values were tried, where the best preformance were obtained with two threshold values at 92 and 137 as illustrated in the histogram in figure \ref{fig:Q2_hist}. The classification successfully classify the background, but fails to classify the ring against the hand, see figure \ref{fig:Q2_im}. This will be due to the similiar color of the objects and as viewed in the histogram,  there is no siginiciant distingt threshold between the regions, there exist some fluctiantions inbetween. 
+
+\begin{figure}[h!]
+  \begin{subfigure}[b]{0.5\textwidth}
+       \centering
+       \includegraphics[width=0.9\linewidth]{images/Q2_png.png}
+       \caption{Histogram of the black and white image.}
+       \label{fig:Q2_hist}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.5\textwidth}
+       \centering
+       \includegraphics[width=0.9\linewidth]{images/Q2.png}
+       \caption{threshold classiciation of the grayscale image}
+       \label{fig:Q2_im}
+   \end{subfigure}
+      \caption{Mulitple thresholding and its corresponding result of an grayscale image.}
+      \label{fig:Q2}
+\end{figure}
 
 
 \textbf{\emph{Question 3.}}
 % MATLAB’s classify function uses Linear Discriminant Analysis (LDA) as default.
 % What assumptions are made on the data by an LDA classifier? 
 % Also, what makes a classifier linear?
-
+Linear Discriminant Analysis (LDA) is a classification technique that operates under the assumption that the features within each class are drawn from a Gaussian (normal) distribution and that all classes share a common covariance matrix. This shared covariance matrix ensures that the decision boundaries between classes are linear, which is a defining characteristic of the classifier. Specifically, the decision boundary is represented as a linear function of the input features, making LDA particularly effective for problems where this assumption holds true.
 
 \textbf{\emph{Question 4.}}
+% Have the results improved using classification compared to thresholding? Is the classification more successful in the case with the grayscale image or single bands? Explain.
+% Does it improve the classification to incorporate pairs of bands or the full RGB information? Discuss. 
+% Show your results from grayscale classification, one pair of features and full RGB classification
+The background more distingt distinguished when using classification and a slighter better classification of the objects, but still not successful
 
-
+When comparing the preformance of mulitple thresholding and classification of the grayscle image
 \section{Classification of multispectral data}
 \textbf{\emph{Question 5.}}
 
