@@ -154,17 +154,73 @@ Linear Discriminant Analysis (LDA) is a classification technique that operates u
 % Have the results improved using classification compared to thresholding? Is the classification more successful in the case with the grayscale image or single bands? Explain.
 % Does it improve the classification to incorporate pairs of bands or the full RGB information? Discuss. 
 % Show your results from grayscale classification, one pair of features and full RGB classification
-The background more distingt distinguished when using classification and a slighter better classification of the objects, but still not successful
 
-When comparing the preformance of mulitple thresholding and classification of the grayscle image
+When comparing the performance of multiple thresholding and classification on the grayscale image, the classification method provided a more distinct separation of the background and demonstrated slightly improved object classification. However, the classification method was not entirely successful due to inconsistencies in the classification of colors within the objects themselves. The results of this analysis are presented in Figure \ref{fig:Q4_bw}.
+
+For the classification of individual bands of the image, the performance varied depending on the band used. As shown in Figure \ref{fig:Q4_1}, the green band produced the most accurate results, with the objects being the most clearly distinguished. In contrast, the red band failed to adequately classify the objects, while the blue band struggled to differentiate the hand from the background.
+
+When pairs of bands were combined, the classification performance improved significantly, as illustrated in Figure \ref{fig:Q4_2}. Both the 'Red and Green' and 'Red and Blue' combinations successfully classified the objects and background with minimal noise. The 'Green and Blue' pair, however, yielded slightly less accurate results, with more noise present in the classification.
+
+Finally, using the full RGB image for classification resulted in a successful outcome, comparable to that of the paired bands. The performance in this case did not show significant improvement over the best-performing pairs. The results of the full RGB classification can be seen in Figure \ref{fig:Q4_3}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 15cm]{images/Q4_bw.png}
+  \caption{Result of classification of the grayscale image}
+  \label{fig:Q4_bw}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 15cm]{images/Q4_1b.png}
+  \caption{Result of classification of single bands of the image}
+  \label{fig:Q4_1}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 15cm]{images/Q4_2b.png}
+  \caption{Result of classification of pairs of bands of the image}
+  \label{fig:Q4_2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 15cm]{images/Q4_3b.png}
+  \caption{Result of classification of pairs of bands of the image}
+  \label{fig:Q4_3}
+\end{figure}
+
 \section{Classification of multispectral data}
 \textbf{\emph{Question 5.}}
+% Which bands are you using for your classification? What classifier are you using?
+% Which classes are possible to separate in a good way? Illustrate with images and scatterplots. Show images from your classification result and compare with classification using all bands. Discuss your results
+Four classes were selected for the satellite image analysis: forest, water, urban areas, and agricultural areas. Corresponding training areas for these classes were identified, as shown in Figure \ref{fig:Q5_res}. Following a comparison of different classifiers, the linear classifier was determined to provide the best results and was used for the final classification.
+
+Several classifications were performed to identify the optimal combination of spectral bands. It was found that the combination [2, 4, 5, 6, 7] produced results identical to using all available bands, which yielded the best classification accuracy. However, the classification faced challenges in distinguishing agricultural areas from urban areas, as evidenced by the presence of several red dots (urban areas) within the light blue regions (agricultural areas) in the figure. Additionally, parts of the forest were misclassified as urban areas. On the other hand, water was the easiest class to identify accurately.
+
+This conclusion is further supported by the scatterplots of different spectral band combinations, shown in Figure \ref{fig:Q5_scatter}. The left scatterplot demonstrated the best separation between classes. Nevertheless, apart from the water class, the scatterplots indicate significant overlap and difficulty in separating the other classes.
+\begin{figure}
+  \centering
+  \includegraphics[width = 15cm]{images/Q5_result.png}
+  \caption{Result of classification of an satillate picture, the left figure used all the seven bands and the right figure removed band 1 & 3}
+  \label{fig:Q5_res}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 15cm]{images/Q5_scatter.png}
+  \caption{Scatterplot for different combinations of band. 1. Forest, 2. Argicultral area, 3. Water, 4. Urban area. }
+  \label{fig:Q5_scatter}
+\end{figure}
 
 \textbf{\emph{Question 6.}}
-
+% Is there any reason not to include all bands if they are not needed to separate the classes?
+Reducing the number of bands decreases the computational cost; however, excluding bands also eliminates data, which may reduce the robustness and flexibility of the classifier. Therefore, if the improvement in computational efficiency achieved by removing bands is not significant, this step may not be necessary.
 \section{Texture-based Classification}
 \textbf{\emph{Question 7.}}
-
+% Which ”offset” value did you use for the co-occurrence matrix? Plot uniformity and entropy for all the objects. You should have a plot similar to Figure 3. Using entropy and uniformity, say which objects are outliers and should be removed from the sequence. Why?
+The co-occurrence matrix was 
 
 
 \end{document}
