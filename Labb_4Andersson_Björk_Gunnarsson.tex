@@ -214,13 +214,34 @@ Reducing the number of bands decreases the computational cost; however, excludin
 \section{Texture-based Classification}
 \textbf{\emph{Question 7.}}
 % Which ”offset” value did you use for the co-occurrence matrix? Plot uniformity and entropy for all the objects. You should have a plot similar to Figure 3. Using entropy and uniformity, say which objects are outliers and should be removed from the sequence. Why?
-The co-occurrence matrix was calculated with the offset [0, 1].
+The co-occurrence matrix was calculated with an offset of [0,1]. Subsequently, uniformity and entropy were computed using Equation \ref{eq:uniformity} and Equation \ref{eq:entropy}, respectively. The results were plotted, as shown in Figure \ref{fig:Q7_graph}. As observed in the figure, outliers are present, corresponding to background regions that were misclassified as viruses.
+
+For uniformity, any point with a value above 0.18 is considered an outlier, while for entropy, points with a value below 2.9 are classified as outliers. Both metrics successfully identify the same outliers. The correctly segmented cutouts were then extracted, as shown in Figure \ref{fig:Q7_cutout}.
+
+\begin{equation}
+  \text{Uniformity} = \sum_{i,j} P(i,j)^2
+  \label{eq:uniformity}
+\end{equation}
+\begin{equation}
+  \text{Entropy} = \sum_{i,j} P(i,j) \text{log}_2 P(i,j)
+  \label{eq:entropy}
+\end{equation}
+where P(i,j) are the normalidzed probabilty of the gray level pair (i, j) in the GLCM
+
 \begin{figure}[h!]
   \centering
   \includegraphics[width = 15cm]{images/Q7_graph.png}
-  \caption{Scatterplot showing the entropy and uniformity.}
+  \caption{Eniformity (left) and entropy (right) values for each cutout image of the found virus }
   \label{fig:Q7_graph}
 \end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width = 15cm]{images/Q7_cutouts.png}
+  \caption{The correctly classified viruses.}
+  \label{fig:Q7_cutout}
+\end{figure}
+
 
 
 \end{document}
