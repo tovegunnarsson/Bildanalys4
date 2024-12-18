@@ -111,7 +111,7 @@
 % Are the two classes possible to separate by using either the x or y coordinate as a single feature? 
 % Explain why or why not.
 
-\begin{figure}[b]
+\begin{figure}[htbp!]
   \centering
   \includegraphics[width = 15cm]{images/Q1.png}
   \caption{Plot of the given data of two classes}
@@ -123,12 +123,12 @@ As illustrated in Figure \ref{fig:Q1}, the dataset comprises two distinct classe
 \textbf{\emph{Question 2.}}
 % Does multiple thresholding give a successful classification of the three classes?
 % Explain why or why not
-Multiple thresholds values were tried, where the best preformance were obtained with two threshold values at 92 and 137 as illustrated in the histogram in figure \ref{fig:Q2_hist}. The classification successfully classify the background, but fails to classify the ring against the hand, see figure \ref{fig:Q2_im}. This will be due to the similiar color of the objects and as viewed in the histogram,  there is no siginiciant distingt threshold between the regions, there exist some fluctiantions inbetween. 
+Multiple thresholds values were tried, where the best preformance was obtained with two threshold values at 92 and 137 as illustrated in the histogram in figure \ref{fig:Q2_hist}. The classification successfully classified the background, but failed to classify the ring against the hand, see figure \ref{fig:Q2_im}. This was due to the similiar color of the objects and as viewed in the histogram,  there is no siginiciant distinct threshold between the regions, since there exist some fluctiantions inbetween them. 
 
-\begin{figure}[h!]
+\begin{figure}[htbp!]
   \begin{subfigure}[b]{0.5\textwidth}
        \centering
-       \includegraphics[width=0.9\linewidth]{images/Q2_png.png}
+       \includegraphics[width=0.9\linewidth]{images/Q2_hist.png}
        \caption{Histogram of the black and white image.}
        \label{fig:Q2_hist}
    \end{subfigure}
@@ -136,7 +136,7 @@ Multiple thresholds values were tried, where the best preformance were obtained 
    \begin{subfigure}[b]{0.5\textwidth}
        \centering
        \includegraphics[width=0.9\linewidth]{images/Q2.png}
-       \caption{threshold classiciation of the grayscale image}
+       \caption{Threshold classiciation of the grayscale image}
        \label{fig:Q2_im}
    \end{subfigure}
       \caption{Mulitple thresholding and its corresponding result of an grayscale image.}
@@ -156,35 +156,28 @@ Linear Discriminant Analysis (LDA) is a classification technique that operates u
 % Show your results from grayscale classification, one pair of features and full RGB classification
 
 When comparing the performance of multiple thresholding and classification on the grayscale image, the classification method provided a more distinct separation of the background and demonstrated slightly improved object classification. However, the classification method was not entirely successful due to inconsistencies in the classification of colors within the objects themselves. The results of this analysis are presented in Figure \ref{fig:Q4_bw}.
-
-For the classification of individual bands of the image, the performance varied depending on the band used. As shown in Figure \ref{fig:Q4_1}, the green band produced the most accurate results, with the objects being the most clearly distinguished. In contrast, the red band failed to adequately classify the objects, while the blue band struggled to differentiate the hand from the background.
-
-When pairs of bands were combined, the classification performance improved significantly, as illustrated in Figure \ref{fig:Q4_2}. Both the 'Red and Green' and 'Red and Blue' combinations successfully classified the objects and background with minimal noise. The 'Green and Blue' pair, however, yielded slightly less accurate results, with more noise present in the classification.
-
-Finally, using the full RGB image for classification resulted in a successful outcome, comparable to that of the paired bands. The performance in this case did not show significant improvement over the best-performing pairs. The results of the full RGB classification can be seen in Figure \ref{fig:Q4_3}.
-
-\begin{figure}
+\begin{figure}[htbp!]
   \centering
   \includegraphics[width = 15cm]{images/Q4_bw.png}
   \caption{Result of classification of the grayscale image}
   \label{fig:Q4_bw}
 \end{figure}
-
-\begin{figure}
+For the classification of individual bands of the image, the performance varied depending on the band used. As shown in Figure \ref{fig:Q4_1}, the green band produced the most accurate results, with the objects being the most clearly distinguished. In contrast, the red band failed to adequately classify the objects, while the blue band struggled to differentiate the hand from the background.
+\begin{figure}[htbp!]
   \centering
-  \includegraphics[width = 15cm]{images/Q4_1b.png}
+  \includegraphics[width =\textwidth]{images/Q4_1b.png}
   \caption{Result of classification of single bands of the image}
   \label{fig:Q4_1}
 \end{figure}
-
-\begin{figure}
+When pairs of bands were combined, the classification performance improved significantly, as illustrated in Figure \ref{fig:Q4_2}. Both the 'Red and Green' and 'Red and Blue' combinations successfully classified the objects and background with minimal noise. The 'Green and Blue' pair, however, yielded slightly less accurate results, with more noise present in the classification.
+\begin{figure}[htbp!]
   \centering
-  \includegraphics[width = 15cm]{images/Q4_2b.png}
+  \includegraphics[width =\textwidth]{images/Q4_2b.png}
   \caption{Result of classification of pairs of bands of the image}
   \label{fig:Q4_2}
 \end{figure}
-
-\begin{figure}
+Finally, using the full RGB image for classification resulted in a successful outcome, comparable to that of the paired bands. The performance in this case did not show significant improvement over the best-performing pairs. The results of the full RGB classification can be seen in Figure \ref{fig:Q4_3}.
+\begin{figure}[htbp!]
   \centering
   \includegraphics[width = 15cm]{images/Q4_3b.png}
   \caption{Result of classification of pairs of bands of the image}
@@ -203,7 +196,7 @@ This conclusion is further supported by the scatterplots of different spectral b
 \begin{figure}
   \centering
   \includegraphics[width = 15cm]{images/Q5_result.png}
-  \caption{Result of classification of an satillate picture, the left figure used all the seven bands and the right figure removed band 1 & 3}
+  \caption{Result of classification of an satillate picture, the left figure used all the seven bands and the right figure removed band 1 \& 3.}
   \label{fig:Q5_res}
 \end{figure}
 
@@ -220,7 +213,7 @@ Reducing the number of bands decreases the computational cost; however, excludin
 \section{Texture-based Classification}
 \textbf{\emph{Question 7.}}
 % Which ”offset” value did you use for the co-occurrence matrix? Plot uniformity and entropy for all the objects. You should have a plot similar to Figure 3. Using entropy and uniformity, say which objects are outliers and should be removed from the sequence. Why?
-The co-occurrence matrix was calculated with the offset [0, 1]
+The co-occurrence matrix was calculated with the offset [0, 1].
 
 
 \end{document}
