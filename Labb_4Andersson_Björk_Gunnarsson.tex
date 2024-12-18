@@ -129,6 +129,7 @@ Multiple thresholds values were tried, where the best preformance was obtained w
   \begin{subfigure}[b]{0.5\textwidth}
        \centering
        \includegraphics[width=0.9\linewidth]{images/Q2_hist.png}
+       \includegraphics[width=0.9\linewidth]{images/Q2_hist.png}
        \caption{Histogram of the black and white image.}
        \label{fig:Q2_hist}
    \end{subfigure}
@@ -193,14 +194,14 @@ Four classes were selected for the satellite image analysis: forest, water, urba
 Several classifications were performed to identify the optimal combination of spectral bands. It was found that the combination [2, 4, 5, 6, 7] produced results identical to using all available bands, which yielded the best classification accuracy. However, the classification faced challenges in distinguishing agricultural areas from urban areas, as evidenced by the presence of several red dots (urban areas) within the light blue regions (agricultural areas) in the figure. Additionally, parts of the forest were misclassified as urban areas. On the other hand, water was the easiest class to identify accurately.
 
 This conclusion is further supported by the scatterplots of different spectral band combinations, shown in Figure \ref{fig:Q5_scatter}. The left scatterplot demonstrated the best separation between classes. Nevertheless, apart from the water class, the scatterplots indicate significant overlap and difficulty in separating the other classes.
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width = 15cm]{images/Q5_result.png}
   \caption{Result of classification of an satillate picture, the left figure used all the seven bands and the right figure removed band 1 \& 3.}
   \label{fig:Q5_res}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width = 15cm]{images/Q5_scatter.png}
   \caption{Scatterplot for different combinations of band. 1. Forest, 2. Argicultral area, 3. Water, 4. Urban area. }
@@ -217,3 +218,4 @@ The co-occurrence matrix was calculated with the offset [0, 1].
 
 
 \end{document}
+
